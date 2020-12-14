@@ -27,7 +27,7 @@ To develop on the project, link to the source files instead::
     $ rmvirtualenv pedantic-timedelta
     $ git clone git@github.com:hotoffthehamster/human-friendly_pedantic-timedelta.git
     $ cd human-friendly_pedantic-timedelta
-    $ mkvirtualenv -a $(pwd) --python=/usr/bin/python3.7 pedantic-timedelta
+    $ mkvirtualenv -a $(pwd) --python=/usr/bin/python3.8 pedantic-timedelta
     (pedantic-timedelta) $ make develop
 
 After creating the virtual environment,
