@@ -35,8 +35,8 @@ from pedantic_timedelta import PedanticTimedelta
 class TestPedanticTimedeltaTimeFormatElapsed(object):
     @pytest.mark.parametrize(
         ("secs_then", "secs_now", "expectation"),
+        # ((datetime.datetime.now() ... # BUGBUG: Set with true now, not freeze_time's!?
         [
-            #  ((datetime.datetime.now() ... # BUGBUG: Set with true now, not freeze_time's!?
             (
                 (
                     datetime.datetime(2015, 12, 10, 12, 30, 0)
