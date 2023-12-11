@@ -31,7 +31,8 @@ from datetime import timedelta
 from inflector import Inflector, English
 
 import logging
-log = logging.getLogger('timedelta_wrap')
+
+log = logging.getLogger("timedelta_wrap")
 
 # This version is substituted on poetry-build by poetry-dynamic-versioning.
 __version__ = ""
@@ -109,7 +110,7 @@ class PedanticTimedelta(timedelta):
     UNIT_NAME_ABBREV = 6
     #
     UNIT_NAME_INDEX_0 = 0
-    UNIT_NAME_INDEX_N = len(UNIT_NAMES['year']) - 1
+    UNIT_NAME_INDEX_N = len(UNIT_NAMES["year"]) - 1
 
     # ***
 
@@ -189,6 +190,7 @@ class PedanticTimedelta(timedelta):
         :type eons: float
         :type gigaannums: float
         """
+
         def new_timedelta():
             totaled_days = as_days()
             must_not_be_more_than_2737909_years(totaled_days)
@@ -241,9 +243,9 @@ class PedanticTimedelta(timedelta):
             #     (At least total_seconds() works 'til infinity!)
             if totaled_days > 999999999:
                 raise ValueError(
-                    'pedantic_timedelta:'
-                    ' That many days is not supported.'
-                    ' Try <= 999999999'
+                    "pedantic_timedelta:"
+                    " That many days is not supported."
+                    " Try <= 999999999"
                 )
 
         def new_object(totaled_days):
@@ -258,7 +260,7 @@ class PedanticTimedelta(timedelta):
                 milliseconds=milliseconds,
                 minutes=minutes,
                 hours=hours,
-                weeks=weeks
+                weeks=weeks,
             )
 
         return new_timedelta()
@@ -308,22 +310,22 @@ class PedanticTimedelta(timedelta):
         :type abbreviate: bool
         """
         if self.total_seconds() >= PedanticTimedelta.SECS_IN_YEAR:
-            lkup_unit = 'year'
+            lkup_unit = "year"
             s_scale = PedanticTimedelta.SECS_IN_YEAR
         elif self.total_seconds() >= PedanticTimedelta.SECS_IN_MONTH:
-            lkup_unit = 'month'
+            lkup_unit = "month"
             s_scale = PedanticTimedelta.SECS_IN_MONTH
         elif self.total_seconds() >= PedanticTimedelta.SECS_IN_DAY:
-            lkup_unit = 'day'
+            lkup_unit = "day"
             s_scale = PedanticTimedelta.SECS_IN_DAY
         elif self.total_seconds() >= (60 * 60):  # secs/min * mins/hour = secs/hour
-            lkup_unit = 'hour'
+            lkup_unit = "hour"
             s_scale = 60.0 * 60.0  # secs_in_hour
         elif self.total_seconds() >= 60:  # secs/min = secs/min
-            lkup_unit = 'minute'
+            lkup_unit = "minute"
             s_scale = 60.0  # secs_in_minute
         else:
-            lkup_unit = 'second'
+            lkup_unit = "second"
             s_scale = 1.0  # secs_in_second
         return lkup_unit, s_scale
 
@@ -345,7 +347,7 @@ class PedanticTimedelta(timedelta):
             abbrev_full_i = PedanticTimedelta.UNIT_NAME_FULL
             unabbreviated = PedanticTimedelta.UNIT_NAMES[lkup_unit][abbrev_full_i]
             if tm_unit != unabbreviated:
-                tm_units += '.'
+                tm_units += "."
         else:
             tm_units = tm_unit
         return tm_units
@@ -383,11 +385,11 @@ class PedanticTimedelta(timedelta):
         tm_unit, s_scale, lkup_unit, abbreviate = self._units_and_scale(abbreviate)
         adj_time = self.total_seconds() / s_scale
         tm_units = self._pluralize_periodify(adj_time, tm_unit, lkup_unit, abbreviate)
-        template = '{{:{}.{}f}} {{}}'.format(field_width, precision)
+        template = "{{:{}.{}f}} {{}}".format(field_width, precision)
         time_fmtd = template.format(adj_time, tm_units)
         return time_fmtd, s_scale, tm_unit
 
     # ***
 
-# ***
 
+# ***

@@ -23,4 +23,3 @@
 # SOFTWARE   OR   THE   USE   OR   OTHER   DEALINGS  IN   THE  SOFTWARE.
 
 """Tests for the ``human-friendly_pedantic-timedelta`` package."""
-
