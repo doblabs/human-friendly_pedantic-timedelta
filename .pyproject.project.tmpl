@@ -2,7 +2,7 @@
 
 # vim:tw=0:ts=4:sw=4:et:norl:ft=toml
 # Author: Landon Bouma <https://tallybark.com/>
-# Project: https://github.com/doblabs/easy-as-pypi#🥧
+# Project: https://github.com/doblabs/human-friendly_pedantic-timedelta#🥧
 # License: MIT
 
 # Copyright (c) © 2020-2023 Landon Bouma. All Rights Reserved.
@@ -13,9 +13,9 @@
 # REFER: https://peps.python.org/pep-0621/
 #   https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
 
-name = "easy-as-pypi"
+name = "human-friendly_pedantic-timedelta"
 version = "0.0.0"
-description = "Bootstrapping your next Python CLI made easy as PyPI"
+description = "Human-friendly Pedantic `timedelta`"
 
 authors = ["Landon Bouma <doblabs@tallybark.com>"]
 maintainers = ["Tally Bark LLC <doblabs@tallybark.com>"]
@@ -29,20 +29,19 @@ classifiers = [
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: OS Independent",
-    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
 # Keywords for PyPI to display, and to use for search results.
 keywords = [
-    "python",
-    "boilerplate",
-    "pyoilerplate",
-    "scaffolding",
-    "framework",
-    "CLI",
-    "TUI",
-    "skeleton",
-    "cookiecutter",
+    "timedelta",
+    "elapsed",
+    "time",
+    "duration",
+    "human",
+    "friendly",
+    "string",
+    "formatter",
 ]
 
 # poetry build excludes __pycache__ dirs
@@ -68,14 +67,14 @@ include = [
 #
 #   packages = [{include = "the_package_name", from = "src"}]
 
+packages = [{ include = "pedantic_timedelta", from = "src" }]
+
 # ***
 
-# YOU: Disable this if your project derived from easy-as-pypi
-#      does not have a runnable script.
-#      - Otherwise set this to the package entry point.
-
-[tool.poetry.scripts]
-easy-as-pypi = "easy_as_pypi:cli"
+# YOU: Uncomment and customize to add a CLI entrypoint:
+#
+#   [tool.poetry.scripts]
+#   human-friendly_pedantic-timedelta = "human_friendly_pedantic_timedelta:cli"
 
 # ***
 
@@ -107,25 +106,25 @@ coc_contact_email = "tallybark+doblabs -at- gmail.com"
 # WIRED: The Sphinx config (docs/conf.py) and .github/bin/update-poetry
 #        require that 'homepage' or 'repository' is set.
 
-homepage = "https://github.com/doblabs/easy-as-pypi#🥧"
+homepage = "https://github.com/doblabs/human-friendly_pedantic-timedelta"
 
 # Include 'repository' unless same as homepage.
-#  repository = "https://github.com/doblabs/easy-as-pypi"
+#  repository = "https://github.com/doblabs/human-friendly_pedantic-timedelta"
 
-history = "https://github.com/doblabs/easy-as-pypi/blob/release/HISTORY.rst"
+history = "https://github.com/doblabs/human-friendly_pedantic-timedelta/blob/release/HISTORY.rst"
 
-documentation = "https://easy-as-pypi.readthedocs.io/en/latest"
+documentation = "https://human-friendly_pedantic-timedelta.readthedocs.io/en/latest"
 
-issues = "https://github.com/doblabs/easy-as-pypi/issues"
+issues = "https://github.com/doblabs/human-friendly_pedantic-timedelta/issues"
 
-download = "https://pypi.org/project/easy-as-pypi/#files"
+download = "https://pypi.org/project/human-friendly_pedantic-timedelta/#files"
 
 {% endblock -%}
 
 {# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #}
 
 {% block isort_known_third_party -%}
-    "click",
+    "inflector",
 {%- endblock %}
 
 {# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #}
@@ -137,11 +136,35 @@ download = "https://pypi.org/project/easy-as-pypi/#files"
 
 {# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #}
 
+{#
+    [tool.poetry.group.project_test]
+    optional = true
+
+    [tool.poetry.group.project_test.dependencies]
+#}
+
+{%- block project_test_dependencies -%}
+
+# *** Datetime testing.
+
+# - "travel through time by mocking the datetime module"
+#
+#   https://pypi.org/project/freezegun/
+#   https://github.com/spulec/freezegun
+freezegun = ">=0.3.14"
+{% endblock -%}
+
+# ***
+
+{#
+    [tool.poetry.dependencies]
+ #}
+
 {% block project_dependencies -%}
 
-# - "Composable command line interface toolkit"
+# - "Vocabulary word pluralizer."
 #
-#   https://pypi.org/project/click
-#   https://github.com/pallets/click
-click = "^8.0.0"
+#   https://pypi.org/project/inflector
+#   https://github.com/ixmatus/inflector
+Inflector = ">= 3.0.1, < 4"
 {% endblock %}
