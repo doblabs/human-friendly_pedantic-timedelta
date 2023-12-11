@@ -33,6 +33,9 @@ from inflector import Inflector, English
 import logging
 log = logging.getLogger('timedelta_wrap')
 
+# This version is substituted on poetry-build by poetry-dynamic-versioning.
+__version__ = ""
+
 
 class PedanticTimedelta(timedelta):
     """
