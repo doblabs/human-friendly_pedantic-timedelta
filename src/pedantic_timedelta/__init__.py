@@ -85,6 +85,8 @@ class PedanticTimedelta(timedelta):
     SECS_IN_MONTH = SECS_IN_YEAR / 12.0  # 2629743.7608
     """SECS_IN_YEAR / 12.0"""
 
+    # Disable black formatting (altly: `# noqa / fmt: skip`)
+    # fmt: off
     UNIT_NAMES = {
         # indices:    0            1       2        3         4          5         6
         'year':   (_('year'),   _('y'), _('yr'), _('yēr'), _('yrs.'), _('yr'),  _('year')),  # noqa
@@ -94,6 +96,7 @@ class PedanticTimedelta(timedelta):
         'minute': (_('minute'), _('M'), _('m.'), _('min'), _('mins'), _('min'), _('min')),   # noqa
         'second': (_('second'), _('S'), _('s.'), _('sec'), _('secs'), _('sec'), _('sec')),   # noqa
     }
+    # fmt: on
     UNIT_NAME_FULL = 0
     UNIT_NAME_ONECH = 1
     UNIT_NAME_TWOCH = 2
@@ -193,6 +196,8 @@ class PedanticTimedelta(timedelta):
             # Ref: https://en.wikipedia.org/wiki/Unit_of_time
             # FIXME: 2015.02.04: Needs testing, especially because overflows
             #        might mean parent class can only represent so many days.
+            # Disable black formatting (altly: `# noqa: E222 / fmt: skip`)
+            # fmt: off
             n_years = 0
             n_years +=   1000000000 * gigaannums    # noqa: E222
             n_years +=    500000000 * eons          # noqa: E222
@@ -210,6 +215,7 @@ class PedanticTimedelta(timedelta):
             n_days = n_years * PedanticTimedelta.DAYS_IN_YEAR
             n_days += PedanticTimedelta.DAYS_IN_MONTH * months
             n_days +=            14 * fortnights    # noqa: E222
+            # fmt: on
             totaled_days += n_days
             return totaled_days
 
