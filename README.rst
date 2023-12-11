@@ -2,28 +2,37 @@
 Human-Friendly Pedantic ``timedelta``
 #####################################
 
-.. image:: https://travis-ci.com/hotoffthehamster/human-friendly_pedantic-timedelta.svg?branch=develop
-  :target: https://travis-ci.com/hotoffthehamster/human-friendly_pedantic-timedelta
+.. CXREF:
+   https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
+
+.. image:: https://github.com/doblabs/human-friendly_pedantic-timedelta/actions/workflows/checks-unspecial.yml/badge.svg?branch=release
+  :target: https://github.com/doblabs/human-friendly_pedantic-timedelta/actions/workflows/checks-unspecial.yml/badge.svg?branch=release
   :alt: Build Status
 
-.. image:: https://codecov.io/gh/hotoffthehamster/human-friendly_pedantic-timedelta/branch/develop/graph/badge.svg
-  :target: https://codecov.io/gh/hotoffthehamster/human-friendly_pedantic-timedelta
+.. CXREF: https://app.codecov.io/gh/doblabs/human-friendly_pedantic-timedelta/settings/badge
+
+.. image:: https://codecov.io/gh/doblabs/human-friendly_pedantic-timedelta/graph/badge.svg?token=NKL19HdM5o
+  :target: https://codecov.io/gh/doblabs/human-friendly_pedantic-timedelta
   :alt: Coverage Status
 
-.. image:: https://readthedocs.org/projects/human-friendly-pedantic-timedelta/badge/?version=latest
-  :target: https://human-friendly-pedantic-timedelta.readthedocs.io/en/latest/
+.. image:: https://readthedocs.org/projects/human-friendly_pedantic-timedelta/badge/?version=latest
+  :target: https://human-friendly_pedantic-timedelta.readthedocs.io/en/latest/
   :alt: Documentation Status
 
-.. image:: https://img.shields.io/github/release/hotoffthehamster/human-friendly_pedantic-timedelta.svg?style=flat
-  :target: https://github.com/hotoffthehamster/human-friendly_pedantic-timedelta/releases
+.. image:: https://img.shields.io/github/v/release/doblabs/human-friendly_pedantic-timedelta.svg?style=flat
+  :target: https://github.com/doblabs/human-friendly_pedantic-timedelta/releases
   :alt: GitHub Release Status
 
-.. image:: https://img.shields.io/pypi/v/human-friendly-pedantic-timedelta.svg
-  :target: https://pypi.org/project/human-friendly-pedantic-timedelta/
+.. image:: https://img.shields.io/pypi/v/human-friendly_pedantic-timedelta.svg
+  :target: https://pypi.org/project/human-friendly_pedantic-timedelta/
   :alt: PyPI Release Status
 
-.. image:: https://img.shields.io/github/license/hotoffthehamster/human-friendly_pedantic-timedelta.svg?style=flat
-  :target: https://github.com/hotoffthehamster/human-friendly_pedantic-timedelta/blob/release/LICENSE
+.. image:: https://img.shields.io/pypi/pyversions/human-friendly_pedantic-timedelta.svg
+  :target: https://pypi.org/project/human-friendly_pedantic-timedelta/
+  :alt: PyPI Supported Python Versions
+
+.. image:: https://img.shields.io/github/license/doblabs/human-friendly_pedantic-timedelta.svg?style=flat
+  :target: https://github.com/doblabs/human-friendly_pedantic-timedelta/blob/release/LICENSE
   :alt: License Status
 
 A Python ``timedelta`` wrapper which provides pedantic string formatting.
