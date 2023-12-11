@@ -24,13 +24,12 @@
 
 """A Human-friendly Pedantic `timedelta` formatter."""
 
-from gettext import gettext as _
-
+import logging
 import time
 from datetime import timedelta
-from inflector import Inflector, English
+from gettext import gettext as _
 
-import logging
+from inflector import English, Inflector
 
 log = logging.getLogger("timedelta_wrap")
 
