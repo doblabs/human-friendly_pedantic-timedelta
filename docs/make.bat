@@ -1,8 +1,11 @@
 @ECHO OFF
 
-REM This file exists within 'human-friendly_pedantic-timedelta' aka 'pedantic_timedelta':
-REM
-REM   https://github.com/hotoffthehamster/human-friendly_pedantic-timedelta
+REM vim:tw=0:ts=4:sw=4:noet:norl:nospell:ft=dosbatch:ff=dos
+
+REM Author: Landon Bouma <https://tallybark.com/>
+REM Project: https://github.com/doblabs/human-friendly_pedantic-timedelta
+REM Pattern: https://github.com/doblabs/easy-as-pypi#🥧
+REM License: MIT
 
 set PROJECTNAME=human-friendly_pedantic-timedelta
 
